@@ -19,7 +19,7 @@ Objetivo: Concatenar duas strings e exibir o resultado.
 # Exercício 5: Seleção de Dados de Banco de Dados
 Objetivo: Selecionar todos os registros da tabela SCARR (Companhias Aéreas) e exibir os códigos e nomes das companhias aéreas.
 
-# Exercício 6: Usando o CASE para Tratar Múltiplas Condições
+# Exercício 6: Usando o IF para Tratar Múltiplas Condições
 Objetivo: Classificar um estudante com base em sua nota média e exibir sua classificação.
 
 # Exercício 7: Trabalhando com Data e Hora
