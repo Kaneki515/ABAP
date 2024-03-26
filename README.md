@@ -28,6 +28,9 @@ Objetivo: Exibir a data e hora atual no formato DD.MM.AAAA HH:MM:SS.
 # Exercício 8: Operações com Tabelas Internas
 Objetivo: Adicionar e remover registros de uma tabela interna.
 
+# Exercício 9: Calcule a média anual dos 4 bimestres
+Objetivo: Faça um programa que recebe as 4 notas e calcule a média anual do aluno. Após calcular, escreva o resultado na tela.
+
 ## Executando os Exercícios
 Cada arquivo ABAP contém a solução para um exercício específico. Para executar um exercício, siga as instruções abaixo:
 
