@@ -28,12 +28,6 @@ Objetivo: Exibir a data e hora atual no formato DD.MM.AAAA HH:MM:SS.
 # Exercício 8: Operações com Tabelas Internas
 Objetivo: Adicionar e remover registros de uma tabela interna.
 
-# Exercício 9: Usando SUBMIT para Chamar Outro Relatório
-Objetivo: Executar um relatório ABAP existente (por exemplo, SAP_DEMO_REPORT) a partir de seu programa.
-
-# Exercício 10: Manipulação de Arquivos no Aplicativo Server
-Objetivo: Criar um arquivo no diretório do servidor de aplicativos ABAP (AL11) e escrever conteúdo nele.
-
 ## Executando os Exercícios
 Cada arquivo ABAP contém a solução para um exercício específico. Para executar um exercício, siga as instruções abaixo:
 
