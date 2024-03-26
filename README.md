@@ -1,6 +1,9 @@
 # Codigos-ABAP
 Repositorio para códigos ABAP
 
+# Exercício 0: Escrever 'Hello World!' na tela
+Objetivo: Utilizar um comando para que seja mostrado 'Hello World!'.
+
 # Exercício 1: Declaração de Dados e Exibição
 Objetivo: Declarar variáveis para armazenar tipos de dados básicos e exibir seus valores.
 
