@@ -31,6 +31,9 @@ Objetivo: Adicionar e remover registros de uma tabela interna.
 # Exercício 9: Calcule a média anual dos 4 bimestres
 Objetivo: Faça um programa que recebe as 4 notas e calcule a média anual do aluno. Após calcular, escreva o resultado na tela.
 
+# Exercício 9: Calcule a média anual dos 4 bimestres e faça uma estrutura de condição
+Objetivo: Faça um programa que recebe as 4 notas e calcule a média anual do aluno. Após calcular, verifique se a nota for menor que 60. Caso menor que 60 escreva "você foi reprovado". Caso maior que 60 escreva "Parabén você foi aprovado".
+
 ## Executando os Exercícios
 Cada arquivo ABAP contém a solução para um exercício específico. Para executar um exercício, siga as instruções abaixo:
 
