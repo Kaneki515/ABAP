@@ -34,6 +34,9 @@ Objetivo: Faça um programa que recebe as 4 notas e calcule a média anual do al
 # Exercício 9: Calcule a média anual dos 4 bimestres e faça uma estrutura de condição
 Objetivo: Faça um programa que recebe as 4 notas e calcule a média anual do aluno. Após calcular, verifique se a nota for menor que 60. Caso menor que 60 escreva "você foi reprovado". Caso maior que 60 escreva "Parabén você foi aprovado".
 
+# Exercício 10: Programa que informa o tipo de veiculo que você pode dirigir pela categoria
+Objetivo: Faça um programa que recebe a categoria da CNH e escreva na tela o veículo que essa categoria pode dirigir.
+
 ## Executando os Exercícios
 Cada arquivo ABAP contém a solução para um exercício específico. Para executar um exercício, siga as instruções abaixo:
 
