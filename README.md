@@ -44,7 +44,7 @@ Repositorio para códigos ABAP
 ## 1. Cadastro Simples de Funcionários
 **Objetivo:** Criar um programa para cadastrar, listar e modificar informações básicas de funcionários (como nome, departamento e salário) em uma tabela interna.
 
-Habilidades Praticadas: Declaração de dados, tabelas internas, loop, entrada de usuário, e exibição de dados com WRITE.
+**Habilidades Praticadas:** Declaração de dados, tabelas internas, loop, entrada de usuário, e exibição de dados com WRITE.
 
 # Executando os Exercícios
 Cada arquivo ABAP contém a solução para um exercício específico. Para executar um exercício, siga as instruções abaixo:
