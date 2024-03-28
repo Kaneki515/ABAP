@@ -3,7 +3,7 @@ Repositorio para códigos ABAP
 
 # Exercícios Básicos
 
-1. Escrever 'Hello World!' na tela
+1. Escrever 'Hello World!' na tela  
 **Objetivo:** Utilizar um comando para que seja mostrado 'Hello World!'.
 > [Resposta](https://github.com/Kaneki515/ABAP/blob/main/Exerc%C3%ADcios%20B%C3%A1sicos/Ex0.abap)
 
@@ -54,7 +54,7 @@ Repositorio para códigos ABAP
 # Projetos Básicos
 
 1. Cadastro Simples de Funcionários
-\ **Objetivo:** Criar um programa para cadastrar, listar e modificar informações básicas de funcionários (como nome, departamento e salário) em uma tabela interna.
+ **Objetivo:** Criar um programa para cadastrar, listar e modificar informações básicas de funcionários (como nome, departamento e salário) em uma tabela interna.
 **Habilidades Praticadas:** Declaração de dados, tabelas internas, loop, entrada de usuário, e exibição de dados com WRITE.
 > [Resposta](https://github.com/Kaneki515/ABAP/blob/main/Projetos%20B%C3%A1sicos/Projeto-1.abap)
 
