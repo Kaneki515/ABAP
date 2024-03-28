@@ -5,12 +5,15 @@ Repositorio para códigos ABAP
 
 ## Exercício 0: Escrever 'Hello World!' na tela
 ****Objetivo:**** Utilizar um comando para que seja mostrado 'Hello World!'.
+[Resposta](https://github.com/Kaneki515/ABAP/blob/main/Exerc%C3%ADcios%20B%C3%A1sicos/Ex0.abap)
 
 ## Exercício 1: Declaração de Dados e Exibição
 **Objetivo:** Declarar variáveis para armazenar tipos de dados básicos e exibir seus valores.
+[Resposta](https://github.com/Kaneki515/ABAP/blob/main/Exerc%C3%ADcios%20B%C3%A1sicos/Ex1.abap)
 
 ## Exercício 2: Uso de Loop para Processar Tabela Interna
 **Objetivo:** Criar uma tabela interna de funcionários e exibir os nomes dos funcionários usando um loop.
+[Resposta](https://github.com/Kaneki515/ABAP/blob/main/Exerc%C3%ADcios%20B%C3%A1sicos/Ex2.abap)
 
 ## Exercício 3: Estruturas Condicionais
 **Objetivo:** Usar uma estrutura condicional para verificar se um número é positivo, negativo ou zero e exibir uma mensagem correspondente.
@@ -43,7 +46,6 @@ Repositorio para códigos ABAP
 
 ## 1. Cadastro Simples de Funcionários
 **Objetivo:** Criar um programa para cadastrar, listar e modificar informações básicas de funcionários (como nome, departamento e salário) em uma tabela interna.
-[Resposta](https://github.com/Kaneki515/ABAP/blob/main/Exerc%C3%ADcios%20B%C3%A1sicos/Ex0.abap)
 
 **Habilidades Praticadas:** Declaração de dados, tabelas internas, loop, entrada de usuário, e exibição de dados com WRITE.
 
