@@ -9,6 +9,12 @@ INITIALIZATION.
 *Chama a tabela transparente.
   TABLES: ztb_bm_teste.
 
+  TYPES: BEGIN OF ty_funcionario,
+           id   TYPE ztb_bm_teste-id,
+           nome TYPE ztb_bm_teste-nome,
+         END OF ty_funcionario.
+
+
 * Determina que a estrutura de intenal table é a estrutura da tabela transparente.
   DATA: it_funcionarios TYPE TABLE OF ztb_bm_teste,
         wa_funcionario  TYPE ztb_bm_teste.
@@ -35,7 +41,14 @@ INITIALIZATION.
   PARAMETERS: p_id_del TYPE ztb_bm_teste-id MODIF ID gr4.
   SELECTION-SCREEN END OF BLOCK b3.
 
-*Chama o Form da seção do qual está selecionado.
+*  SELECTION-SCREEN BEGIN OF BLOCK b4 WITH FRAME TITLE TEXT-002.
+*
+*
+*
+*  SELECTION-SCREEN END OF BLOCK b4.
+
+*  chama o form da seção do qual está selecionado.
+
 START-OF-SELECTION.
   IF p_create = 'X'.
     PERFORM fm_create_user.
@@ -58,11 +71,9 @@ AT SELECTION-SCREEN OUTPUT.
       ENDIF.
 
     ELSEIF p_read = 'X'.
-      IF screen-group1 = 'GR4' OR screen-group1 = 'GR3'  OR screen-group1 = 'GR2'.
+      IF screen-group1 = 'GR4' OR screen-group1 = 'GR3' OR screen-group1 = 'GR2'.
         screen-active = 0.
       ENDIF.
-      cl_demo_output=>display( it_funcionarios ).
-      RETURN.
 
     ELSEIF p_update = 'X'.
       IF screen-group1 = 'GR3'.
@@ -80,6 +91,11 @@ AT SELECTION-SCREEN OUTPUT.
     ENDIF.
     MODIFY SCREEN.
   ENDLOOP.
+
+*  Chama o performa de read_user quando o botão p_read é selecionado.
+  IF p_read = 'X'.
+    PERFORM fm_read_user.
+  ENDIF.
 
 *Form para Create.
 FORM fm_create_user.
@@ -99,6 +115,27 @@ ENDFORM.
 *Form para Read.
 FORM fm_read_user.
   SELECT * FROM ztb_bm_teste INTO TABLE it_funcionarios.
+
+  SELECT mandt, id, nome FROM ztb_bm_teste INTO TABLE @it_funcionarios.
+
+  DATA: o_alv TYPE REF TO cl_salv_table.
+
+  TRY.
+      cl_salv_table=>factory( IMPORTING r_salv_table = o_alv
+                            CHANGING  t_table      = it_funcionarios ).
+
+      o_alv->get_functions( )->set_all( abap_true ).
+
+      o_alv->get_display_settings( )->set_list_header( 'Funcionarios Cadastrados' ).
+
+      o_alv->display( ).
+
+      WRITE: 'Batatinha 123'.
+
+    CATCH cx_salv_msg INTO DATA(o_exception).
+      MESSAGE 'Erro ao gerar o relatório ALV' TYPE 'I'.
+  ENDTRY.
+
 ENDFORM.
 
 *Form para Update.
@@ -111,6 +148,8 @@ FORM fm_update_user.
     lv_nome = p_nom_up.
 
     UPDATE ztb_bm_teste SET nome = lv_nome WHERE id = p_id_up.
+
+    CLEAR p_nom_up.
 
     IF sy-subrc = 0.
       COMMIT WORK.
@@ -136,7 +175,3 @@ FORM fm_delete_user.
     MESSAGE 'Falha ao deletar o registro' TYPE 'E'.
   ENDIF.
 ENDFORM.
-
-START-OF-SELECTION.
-  CLEAR: p_id, p_nome.
-  REFRESH it_funcionarios.
