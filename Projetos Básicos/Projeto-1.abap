@@ -51,21 +51,20 @@ START-OF-SELECTION.
 AT SELECTION-SCREEN OUTPUT.
   LOOP AT SCREEN.
     IF p_create = 'X'.
-
       IF screen-group1 = 'GR2'.
         screen-active = 1.
-      ELSEIF screen-group1 = 'GR4' OR screen-group1 = 'GR3' OR screen-group1 = 'GR2'.
+      ELSEIF screen-group1 = 'GR4' OR screen-group1 = 'GR3'.
         screen-active = 0.
       ENDIF.
-    ELSEIF p_read = 'X'.
 
+    ELSEIF p_read = 'X'.
       IF screen-group1 = 'GR4' OR screen-group1 = 'GR3'  OR screen-group1 = 'GR2'.
         screen-active = 0.
       ENDIF.
       cl_demo_output=>display( it_funcionarios ).
       RETURN.
-    ELSEIF p_update = 'X'.
 
+    ELSEIF p_update = 'X'.
       IF screen-group1 = 'GR3'.
         screen-active = 1.
       ELSEIF screen-group1 = 'GR4' OR screen-group1 = 'GR2'.
@@ -73,7 +72,6 @@ AT SELECTION-SCREEN OUTPUT.
       ENDIF.
 
     ELSEIF p_delete = 'X'.
-
       IF screen-group1 = 'GR4'.
         screen-active = 1.
       ELSEIF screen-group1 = 'GR3' OR screen-group1 = 'GR2'.
