@@ -26,11 +26,14 @@ SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
 PARAMETERS: p_id   TYPE ztb_bm_teste-id,
             p_nome TYPE ztb_bm_teste-nome.
 SELECTION-SCREEN END OF BLOCK b1.
+
+SELECTION-SCREEN PUSHBUTTON 1(20)  but1 USER-COMMAND create.
+
 SELECTION-SCREEN END OF SCREEN 100.
 
 * Aba para a tela de Read user.
 SELECTION-SCREEN BEGIN OF SCREEN 101 AS SUBSCREEN.
-
+SELECTION-SCREEN PUSHBUTTON 1(20)  but4 USER-COMMAND read.
 SELECTION-SCREEN END OF SCREEN 101.
 
 * Aba para a tela de update user.
@@ -39,6 +42,9 @@ SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE TEXT-003.
 PARAMETERS: p_id_up  TYPE ztb_bm_teste-id,
             p_nom_up TYPE ztb_bm_teste-nome.
 SELECTION-SCREEN END OF BLOCK b2.
+
+SELECTION-SCREEN PUSHBUTTON 1(20)  but2 USER-COMMAND update.
+
 SELECTION-SCREEN END OF SCREEN 102.
 
 * Aba para a tela de delete user.
@@ -47,8 +53,10 @@ SELECTION-SCREEN BEGIN OF BLOCK b3 WITH FRAME TITLE TEXT-004.
 PARAMETERS: p_id_del TYPE ztb_bm_teste-id.
 CHECK p_id_del IS NOT INITIAL.
 SELECTION-SCREEN END OF BLOCK b3.
-SELECTION-SCREEN END OF SCREEN 103.
 
+SELECTION-SCREEN PUSHBUTTON 1(20)  but3 USER-COMMAND delete.
+
+SELECTION-SCREEN END OF SCREEN 103.
 
 INITIALIZATION.
 *Telas
@@ -59,7 +67,14 @@ INITIALIZATION.
 
   aba-prog = sy-repid.
 
+*Botoes
+  but1 = '@2L@ Create'.
+  but2 = '@0Z@ Update'.
+  but3 = '@11@ Delete'.
+  but4 = '@10@ Exibir'.
+
 START-OF-SELECTION.
+
 
   CASE sy-ucomm.
     WHEN 'tela_create'.
@@ -75,19 +90,40 @@ START-OF-SELECTION.
       aba-activetab = 'tela_delete'.
       aba-dynnr = 103.
   ENDCASE.
+*
+*  CASE aba-activetab.
+*    WHEN 'TELA_CREATE'.
+*      PERFORM fm_create_user.
+*    WHEN 'TELA_READ'.
+*      PERFORM fm_read_user.
+*      RETURN.
+*    WHEN 'TELA_UPDATE'.
+*      PERFORM fm_update_user.
+*    WHEN 'TELA_DELETE'.
+*      PERFORM fm_delete_user.
+*  ENDCASE.
 
-  CASE aba-activetab.
-    WHEN 'TELA_CREATE'.
-      PERFORM fm_create_user.
-    WHEN 'TELA_READ'.
-      PERFORM fm_read_user.
-      RETURN.
-    WHEN 'TELA_UPDATE'.
-      PERFORM fm_update_user.
-    WHEN 'TELA_DELETE'.
-      PERFORM fm_delete_user.
-  ENDCASE.
+AT SELECTION-SCREEN ON BLOCK b1.
+  IF sscrfields-ucomm = 'CREATE'.
+    PERFORM fm_create_user.
+  ENDIF.
 
+AT SELECTION-SCREEN.
+  IF sscrfields-ucomm = 'READ'.
+    PERFORM fm_read_user.
+  ENDIF.
+
+AT SELECTION-SCREEN ON BLOCK b2.
+  IF sscrfields-ucomm = 'UPDATE'.
+    PERFORM fm_update_user.
+  ENDIF.
+
+AT SELECTION-SCREEN ON BLOCK b3.
+  IF sscrfields-ucomm = 'DELETE'.
+    PERFORM fm_delete_user.
+  ENDIF.
+
+*   BREAK-POINT.
 
 *Form para Create.
 FORM fm_create_user.
@@ -127,8 +163,6 @@ FORM fm_read_user.
     CATCH cx_salv_msg INTO DATA(o_exception).
       MESSAGE 'Erro ao gerar o relatório ALV' TYPE 'I'.
   ENDTRY.
-
-
 
 ENDFORM.
 
