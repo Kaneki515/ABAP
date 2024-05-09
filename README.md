@@ -63,6 +63,6 @@ Cada arquivo ABAP contém a solução para um exercício específico. Para execu
 
 # Abra o SAP GUI.
 Copie o conteúdo dos arquivos terminados em .abap.
-Mude o report para o nomed do seu programa
+Mude o report para o nome do seu programa
 Cole o código no editor de código ABAP.
 Execute o código.
