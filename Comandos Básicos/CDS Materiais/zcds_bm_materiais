@@ -1,0 +1,25 @@
+@AbapCatalog.sqlViewName: 'ZCDS_BM_ITEM'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Aprendizado de CDS View com ABAP'
+define view ZCDS_BM_MATERIAIS
+  as select from mat_handling as Handling
+    inner join   storehouse   as Store on Store.whnr = Handling.whnr
+    inner join   material     as Mat   on Mat.matnr = Handling.matnr
+    inner join   branch       as Bra   on Bra.branr = Handling.whnr
+{
+  key Handling.movnr,
+      Handling.whnr,
+      Bra.branr,
+      Store.description,
+      Handling.doctype,
+      Handling.movtyp,
+      Mat.matnr,
+      Mat.maktx,
+      Handling.quantity,
+      Mat.price,
+      Handling.quantity * Mat.price as valor,
+      Handling.erdat,
+      Handling.entrytime
+}
